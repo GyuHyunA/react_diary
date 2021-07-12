@@ -59,10 +59,24 @@ h4{
     width: 30px;
     margin-right: 10px;
     margin-top: 15px;
+    position: absolute;
+    right: 10px;
 }
 
-.rotate{
+.rotatea{
+    transition: all 1s;
     transform: rotate(180deg);
+}
+
+.rotateb{
+    transition: all 1s;
+    transform: rotate(0deg);
+    
+}
+
+.slider{
+    transition: all 1s;
+    opacity: 1;
 }
     
 `;
@@ -90,6 +104,19 @@ function Useapp() {
         console.log('변경')
     }
 
+    const isSlideMenu = () => {
+        setHooka(!hooka);
+        if(hooka == true){
+            console.log('aaa');
+        
+        }
+        
+    }
+
+    
+
+    let imgb = "https://turtlehip.com/upload/product/42_1617967034_2.jpg";
+    const prearray = new Array(12).fill(imgb);
 
     return (
         <Globaldiv>
@@ -97,7 +124,8 @@ function Useapp() {
                 <div>개발 Blog</div>
             </div>
             <div>
-                <img src={imga} className={`hook ${hooka ? 'rotate' : ''}`} onClick={() => setHooka(!hooka)} />
+                <img src={imga} className={`hook ${hooka ? 'rotatea' : 'rotateb' }`} onClick={isSlideMenu} />
+                {/* () => setHooka(!hooka) */}
             </div>
             <h4>{post}</h4>
             <div className="text-box">
@@ -105,8 +133,9 @@ function Useapp() {
                 <span>2월 30일</span>
             </div>
             <hr/>
-            {hooka || 
-            <div>
+            {hooka ||
+
+            <div className="slider">
                 <div className="text-box">
                     <p>{a[0]}</p>
                     <span>2월 30일</span>
@@ -121,7 +150,13 @@ function Useapp() {
                     <button onClick={changeCoat} className="btn"> 버어어어튼 </button>
                 </div>
             </div>
-             }
+            }
+
+            {/* <div>
+                {prearray.map((v,i) => <img key={i} src={v}/>)}
+            </div> */}
+
+            
         </Globaldiv>
     );
 }
