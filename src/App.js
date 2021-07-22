@@ -6,6 +6,7 @@ import Profiles from './rout_component/profiles';
 import Queryabout from './rout_component/queryabout';
 import UseStateA from './usestatecomponent/useState-a';
 import PropsA from './props/props-a';
+import MapA from './map/map-a';
 
 
 
@@ -38,6 +39,10 @@ function App() {
           <Link to="/propsA"> Props 연습 </Link>
         </li>
 
+        <li>
+          <Link to="/MapA"> Map 연습 </Link>
+        </li>
+
       </ul>
 
       <hr />
@@ -46,6 +51,7 @@ function App() {
       <Route path="/queryabout" component={Queryabout} />
       <Route path="/profiles" component={Profiles} />
       <Route path="/propsA" component={PropsA}/>
+      <Route Path="/mapA" component={MapA}/>
     </div>
 
 
