@@ -7,6 +7,8 @@ import Queryabout from './rout_component/queryabout';
 import UseStateA from './usestatecomponent/useState-a';
 import PropsA from './props/props-a';
 import MapA from './map/map-a';
+import PropUsestateA from './test/prop-usestateA';
+import Test1 from './test/test1';
 
 
 
@@ -27,21 +29,14 @@ function App() {
         <li>
           <Link to="/profiles"> 프로필 목록 </Link>
         </li>
-
-        <hr />
-
-        <li>
-          <Link to="/usestateA"> UseState 연습 </Link>
-          <Route Path="/usestateA" component={UseStateA} />
-        </li>
+        
+        <hr/>
 
         <li>
-          <Link to="/propsA"> Props 연습 </Link>
+          <Link to="/test1"> 테스트 1 </Link>
         </li>
 
-        <li>
-          <Link to="/MapA"> Map 연습 </Link>
-        </li>
+        
 
       </ul>
 
@@ -49,9 +44,7 @@ function App() {
       <Route path="/" component={Home} exact={true} /> {/* exact={true} ==> 경로가 완전히 같을 때만 컴포넌트를 보여줌 */}
       <Route path="/about" component={About} />
       <Route path="/queryabout" component={Queryabout} />
-      <Route path="/profiles" component={Profiles} />
-      <Route path="/propsA" component={PropsA}/>
-      <Route Path="/mapA" component={MapA}/>
+      <Route path="/test1" component={Test1}/>
     </div>
 
 
